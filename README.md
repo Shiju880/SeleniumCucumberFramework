@@ -43,8 +43,9 @@ The framework follows Page Object Model design patterns to improve code reusabil
 
 ## Execution
 - Clone the repository
-  - git clone
+  - git clone  < gitUrl >
 - Run tests using maven
+  - mvn clean
   - mvn test
 
 ## Reports

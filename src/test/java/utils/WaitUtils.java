@@ -30,12 +30,13 @@ public class WaitUtils {
         return wait.until(ExpectedConditions.urlContains(urlText));
     }
 
-    public List<WebElement> waitForElementsVisible(By locator){
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
-    }
-
     public List<WebElement> waitForElementsVisibleByElement(List <WebElement> elements){
         return wait.until(ExpectedConditions.visibilityOfAllElements(elements));
+    }
+
+    public WebElement waitForTextVisible(WebElement element, String text){
+        wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+        return element;
     }
 
 }

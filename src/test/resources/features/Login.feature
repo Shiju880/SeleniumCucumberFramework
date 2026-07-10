@@ -1,5 +1,5 @@
 Feature: Login
-
+  @Smoke @Regression
   Scenario Outline: Verify successful login as User with different roles
     When the user provides userName and password
     And select the "User" login type
@@ -15,14 +15,14 @@ Feature: Login
     | Teacher    |
     | Student    |
 
-
+  @Smoke @Regression
   Scenario: Verify successful login as Admin
     When the user provides userName and password
     And select the "Admin" login type
     And signIn with accepting the Terms and Conditions
     Then user should be redirected to the ProtoCommerce Shop Page
 
-
+  @Regression
   Scenario Outline: Verify Login error with incorrect credential
     When the user provides incorrect "<userName>" and "<password>"
     And signIn with accepting the Terms and Conditions
@@ -37,7 +37,7 @@ Feature: Login
     | rahulshettyacademy | invalidPassword   | Incorrect username/password. |
     | invalidUserName    | Learning@830$3mK2 | Incorrect username/password. |
 
-
+  @Smoke @Regression
   Scenario: Verify Admin option is selected when user cancels limited functionality confirmation
     When the user provides userName and password
     And select the "User" login type
@@ -45,6 +45,7 @@ Feature: Login
     When the user decline the confirm message
     Then the Admin option should be selected by default.
 
+  @Regression
   Scenario: Verify login is restricted when user does not accept Terms and Conditions
     When the user provides userName and password
     And user signs in without accepting Terms and Conditions

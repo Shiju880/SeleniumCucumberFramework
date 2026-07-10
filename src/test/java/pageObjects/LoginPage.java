@@ -107,9 +107,8 @@ public class LoginPage {
         return adminRadioBtn.isSelected();
     }
 
-    public String getErrorMessage(){
-         WebElement element = waitUtils.waitForElementVisible(errorMessage);
-         String errorMessage = element.getText().trim();
-         return errorMessage;
+    public String getErrorMessage(String expectedErrorMessage){
+         WebElement element = waitUtils.waitForTextVisible(errorMessage,expectedErrorMessage);
+         return element.getText().trim();
     }
 }

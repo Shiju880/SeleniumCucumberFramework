@@ -32,7 +32,7 @@ public class PlaceOrderPage {
     @FindBy(xpath = "//div[contains(@class,'alert-success')]")
     WebElement successMessage;
 
-    @FindBy(css = "input#checkbox2")
+    @FindBy(xpath = "//label[@for='checkbox2']")
     WebElement termsAndConditionCheckBox;
 
     public int checkOutBtnCount(){
@@ -58,6 +58,7 @@ public class PlaceOrderPage {
     }
 
     public void acceptTermsAndConditions(){
+        waitUtils.waitForElementClickable(termsAndConditionCheckBox);
         termsAndConditionCheckBox.click();
     }
 

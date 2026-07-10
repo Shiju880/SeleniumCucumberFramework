@@ -8,17 +8,17 @@ Feature: PlaceOrder Validation
     And user proceed on place Order
 
 
-
+  @Regression
   Scenario: Verify checkout product count is same as cart product count
     Then selected products count should be maintained in place order checkout cart
 
-
+  @Smoke @Regression
   Scenario: Verify user successfully place the order
     When user enter the country "India"
     And user place the order with accepting the Terms and conditions
     Then order placed success should display
 
-  @Debug
+  @Regression
   Scenario: Verify place order is restricted when user does not accept Terms and Conditions
     When user enter the country "India"
     And user place order without accepting Terms and Conditions

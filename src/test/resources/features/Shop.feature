@@ -1,4 +1,5 @@
 Feature: Shop Products
+  @Smoke @Regression
   Scenario: Verify user able to add products in cart
     Given user is on ProtoCommerce shop page
     When user adds products to the cart

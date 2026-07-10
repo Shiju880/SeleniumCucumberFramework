@@ -71,7 +71,7 @@ public class LoginStepDefinition {
 
     @Then("{string} should be displayed")
     public void should_be_displayed(String expectedErrorMessage) {
-        String actualErrorMessage = testContextSetup.loginPage.getErrorMessage();
+        String actualErrorMessage = testContextSetup.loginPage.getErrorMessage(expectedErrorMessage);
         Assert.assertEquals(actualErrorMessage, expectedErrorMessage);
     }
 
